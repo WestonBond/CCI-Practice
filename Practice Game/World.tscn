@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://Train.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ScrollingBackground.gd" type="Script" id=3]
 [ext_resource path="res://Art/Tracky.png" type="Texture" id=4]
+[ext_resource path="res://Boulder.tscn" type="PackedScene" id=5]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -11,6 +12,7 @@ __meta__ = {
 "_edit_horizontal_guides_": [ -312.715 ],
 "_edit_vertical_guides_": [  ]
 }
+rock_scene = ExtResource( 5 )
 
 [node name="Train" parent="." instance=ExtResource( 2 )]
 position = Vector2( 234.833, 269.446 )
@@ -44,3 +46,15 @@ texture = ExtResource( 4 )
 centered = false
 region_enabled = true
 region_rect = Rect2( -35.5962, 0, 3551.05, 170 )
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="RockTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
+[connection signal="timeout" from="RockTimer" to="." method="_on_RockTimer_timeout"]
