@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://Train.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ScrollingBackground.gd" type="Script" id=3]
 [ext_resource path="res://Art/Tracky.png" type="Texture" id=4]
 [ext_resource path="res://Boulder.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Coin.tscn" type="PackedScene" id=6]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -55,6 +56,9 @@ wait_time = 2.0
 [node name="RockTimer" type="Timer" parent="."]
 wait_time = 0.5
 
+[node name="Coin" parent="." instance=ExtResource( 6 )]
+position = Vector2( 642.058, 280.316 )
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
 [connection signal="timeout" from="RockTimer" to="." method="_on_RockTimer_timeout"]
+[connection signal="collect_signal" from="Coin" to="." method="_on_Coin_collect_signal"]

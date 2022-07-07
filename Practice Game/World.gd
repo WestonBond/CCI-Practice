@@ -2,6 +2,7 @@ extends Node2D
 export(PackedScene) var rock_scene
 
 var score
+var coin_count = 0
 
 func _ready():
 	randomize()
@@ -10,10 +11,9 @@ func _ready():
 
 func new_game():
 	score = 0
+	coin_count = 0
 	$StartTimer.start()
 	
-
-
 
 
 func _on_StartTimer_timeout():
@@ -30,3 +30,12 @@ func _on_RockTimer_timeout():
 	rock.position.x = 600
 	rock.position.y = (randi() % 3) * 10
 	add_child(rock)
+
+func _on_Coin_collect_signal():
+	var coin_scene = load("res://Coin.tscn")
+	var coin_instance = coin_scene.instance()
+	coin_instance.position = Vector2(642.058, 280.316)
+	coin_instance.connect("collect_signal", self, "_on_Coin_collect_signal")
+	add_child(coin_instance)
+	coin_count += 1
+
