@@ -13,8 +13,12 @@ var in_motion = false
 func _physics_process(delta):
 	if position == Vector2(position.x, 419.446014):
 		is_bot = true
+	else:
+		is_bot = false
 	if position == Vector2(position.x, 119.446014):
 		is_top = true
+	else:
+		is_top = false
 	if Input.is_action_just_pressed("move_down") and is_bot == false and in_motion == false:
 		final_vec = Vector2(self.global_position.x,self.global_position.y+150)
 	if Input.is_action_just_pressed("move_up") and is_top == false and in_motion == false:
@@ -24,4 +28,3 @@ func _physics_process(delta):
 		position = position.move_toward(final_vec, delta * speed)
 	if position == final_vec:
 		in_motion = false
-	print(position)
