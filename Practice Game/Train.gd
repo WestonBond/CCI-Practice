@@ -9,9 +9,12 @@ var final_vec = Vector2(0,0)
 var is_top = false
 var is_bot = false
 var in_motion = false
+signal death_signal
 
 func kill():
 	get_tree().change_scene("res://DeathScreen.tscn")
+	queue_free()
+	emit_signal("death_signal")
 
 func _physics_process(delta):
 	if position == Vector2(position.x, 419.446014):
