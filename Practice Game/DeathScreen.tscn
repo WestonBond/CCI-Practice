@@ -7,7 +7,6 @@
 font_path = "res://ChiKareGo2Font.ttf"
 
 [sub_resource type="DynamicFont" id=2]
-size = 21
 font_data = SubResource( 1 )
 
 [sub_resource type="DynamicFontData" id=3]
@@ -31,19 +30,19 @@ margin_right = 1024.0
 margin_bottom = 600.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 452.0
-margin_top = 238.0
-margin_right = 572.0
-margin_bottom = 362.0
+margin_left = 467.0
+margin_top = 240.0
+margin_right = 556.0
+margin_bottom = 359.0
 custom_constants/separation = 20
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
-margin_right = 120.0
+margin_right = 89.0
 margin_bottom = 30.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer"]
-margin_left = 36.0
-margin_right = 84.0
+margin_left = 20.0
+margin_right = 68.0
 margin_bottom = 30.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
@@ -51,25 +50,25 @@ text = "ded"
 
 [node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
 margin_top = 50.0
-margin_right = 120.0
-margin_bottom = 70.0
+margin_right = 89.0
+margin_bottom = 65.0
 
 [node name="HighScore" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer3"]
-margin_right = 120.0
-margin_bottom = 20.0
+margin_right = 89.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 49, 0 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "High Score: []"
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
-margin_top = 90.0
-margin_right = 120.0
-margin_bottom = 124.0
+margin_top = 85.0
+margin_right = 89.0
+margin_bottom = 119.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2"]
-margin_left = 29.0
-margin_right = 90.0
+margin_left = 14.0
+margin_right = 75.0
 margin_bottom = 34.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
