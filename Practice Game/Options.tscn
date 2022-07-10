@@ -63,8 +63,8 @@ text = "Volume"
 
 [node name="HSlider" type="HSlider" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
 margin_left = 100.0
-margin_right = 200.0
-margin_bottom = 20.0
+margin_right = 116.0
+margin_bottom = 16.0
 min_value = -30.0
 max_value = 0.0
 script = ExtResource( 3 )

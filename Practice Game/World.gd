@@ -3,6 +3,7 @@ export(PackedScene) var rock_scene
 
 var score
 var coin_count = 0
+var rng = RandomNumberGenerator.new()
 
 func _ready():
 	randomize()
@@ -23,7 +24,8 @@ func _on_ScoreTimer_timeout():
 
 func _on_RockTimer_timeout():
 	var rock = rock_scene.instance()
-	rock.position.x = 600
+
+	rock.position.x = rng.randf_range(300.0, 800.0)
 	rock.position.y = (randi() % 3) * 10
 	add_child(rock)
 
