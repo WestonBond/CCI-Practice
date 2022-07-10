@@ -13,17 +13,13 @@ func new_game():
 	score = 0
 	coin_count = 0
 	$StartTimer.start()
-	
-
 
 func _on_StartTimer_timeout():
 	$RockTimer.start()
 	$ScoreTimer.start()
 
-
 func _on_ScoreTimer_timeout():
 	score += 1 
-
 
 func _on_RockTimer_timeout():
 	var rock = rock_scene.instance()
@@ -38,4 +34,8 @@ func _on_Coin_collect_signal():
 	coin_instance.connect("collect_signal", self, "_on_Coin_collect_signal")
 	add_child(coin_instance)
 	coin_count += 1
+	Global.coins += 1
+
+func _on_Train_death_signal():
+	get_tree().call_group("coins", "free")
 

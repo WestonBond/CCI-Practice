@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Chicarego.tres" type="DynamicFont" id=1]
 [ext_resource path="res://DeathScreen.gd" type="Script" id=2]
+[ext_resource path="res://HighScore.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://ChiKareGo2Font.ttf"
@@ -44,8 +45,8 @@ margin_bottom = 30.0
 margin_left = 20.0
 margin_right = 68.0
 margin_bottom = 30.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "ded"
 
 [node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
@@ -57,9 +58,10 @@ margin_bottom = 65.0
 margin_right = 89.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 49, 0 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "High Score: []"
+script = ExtResource( 3 )
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
 margin_top = 85.0
@@ -82,8 +84,8 @@ margin_bottom = 15.0
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
 margin_right = 7.0
 margin_bottom = 15.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = ">"
 
 [node name="Restart" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
@@ -91,8 +93,8 @@ margin_left = 11.0
 margin_right = 61.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 7, 0 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Restart"
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
@@ -107,8 +109,8 @@ margin_bottom = 15.0
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
 margin_right = 7.0
 margin_bottom = 15.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = ">"
 
 [node name="Exit" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
@@ -116,6 +118,6 @@ margin_left = 11.0
 margin_right = 61.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 50, 0 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Exit"
